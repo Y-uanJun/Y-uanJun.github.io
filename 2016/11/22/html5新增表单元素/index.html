@@ -17,11 +17,11 @@
 
     <title>
         
-          Hello World｜undefined
+          HTML5新增表单元素｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/09/01/hello-world/">
+    <link rel="canonical" href="http://yoursite.com/2016/11/22/html5新增表单元素/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -148,15 +148,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Hello World</h1>
+                    <h1>HTML5新增表单元素</h1>
                     
                     <span class="meta">
                          作者 YuanJun
                          <span>
-                          日期 2016-09-01
+                          日期 2016-11-22
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#HTML5" title="HTML5">HTML5</a>
                         
                     </div>
                 </div>
@@ -165,7 +167,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Hello World
+            HTML5新增表单元素
         </span>
     </div>
 </header>
@@ -177,15 +179,26 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+                <h5 id="表单新特性"><a href="#表单新特性" class="headerlink" title="表单新特性"></a>表单新特性</h5><h6 id="1、form-属性"><a href="#1、form-属性" class="headerlink" title="1、form 属性"></a>1、form 属性</h6><p>在html4中表单内的从属元素必须写在表单内部，而在html5中，指定form元素的id值后，只需要给外部的表单元素指定相同的id值，便可以保持从属关系，即表单内的元素不再依赖于form的位置，可以写在任何地方。</p>
+<h6 id="2、placeholder属性"><a href="#2、placeholder属性" class="headerlink" title="2、placeholder属性"></a>2、placeholder属性</h6><p><code>&lt;input type=&quot;text&quot; placeholder=&quot;请输入内容&quot;&gt;</code></p>
+<p>如上代码，placeholder一般用在文本输入框，显示未输入状态且内容为空时的提示内容</p>
+<h6 id="3、autofocus属性"><a href="#3、autofocus属性" class="headerlink" title="3、autofocus属性"></a>3、autofocus属性</h6><p>指定空间自动获得焦点，一个html页面只能有一个控件具有该属性。</p>
+<blockquote>
+<p>从实用角度来看不要滥用该属性。到目前为止，支撑该属性的浏览器有Safari 5、Google Chrome 6以上版本、FireFox 4、Opera10以上版本、IE 10</p>
+</blockquote>
+<p>######4、formanction属性######<br>在HTML4中，一个表单内的元素只能通过anction属性统一提交到另一个页面，但是在HTML5中，可以用不同的formaction属性，将使得点击不同按钮时，能提交到不同的页面<br><code>&lt;form id=&quot;textform&quot; anction=&quot;save.jsp&quot;&gt;
+       &lt;input type=&quot;submit&quot; name=&quot;submit1&quot; formaction=&quot;submit1.jsp&quot;&gt;
+       &lt;input type=&quot;submit&quot; name=&quot;submit2&quot; formaction=&quot;submit2.jsp&quot;&gt;
+&lt;/form&gt;</code></p>
+<h6 id="5、formmethod属性"><a href="#5、formmethod属性" class="headerlink" title="5、formmethod属性"></a>5、formmethod属性</h6><p>在html4中，method指定提交的方法，并且一个表单内只能有一个method来指定提交方法，但是在html5中，可以通过formmethod属性对每个表单元素指定不同的提交方法。</p>
+<h6 id="6、formenctype属性"><a href="#6、formenctype属性" class="headerlink" title="6、formenctype属性"></a>6、formenctype属性</h6><p>在html4中，enctype用来指定表单发送到服务器之前应该如何对哦表单内数据进行编码，同样的一个表单也只能有一个enctype属性。但是在html5中，可以使用formenctype属性对不同的表单元素指定不同的编码方式。</p>
+<h6 id="7、formarget属性"><a href="#7、formarget属性" class="headerlink" title="7、formarget属性"></a>7、formarget属性</h6><p>在html4中表单元素具有一个target属性，用来指定砸何处打开表单提交后所需加载的页面，其中以下五个属性值<br>_blank:在新的浏览器窗口中打开<br>_self:默认值，在相同框架（frame）中打开<br>_parent:砸当前框架（frame）的父框架（frame）中打开<br>_top:在当前浏览器窗口中打开<br>framename:在指定的框架（frame）中打开</p>
+<blockquote>
+<p>到目前为止，支撑formanction、formmethod、formenctype、formtarget属性的浏览器有Safari 5、Google Chrome 6以上版本、FireFox 4、Opera10.05以上版本、IE 10</p>
+</blockquote>
+<h6 id="8、required属性"><a href="#8、required属性" class="headerlink" title="8、required属性"></a>8、required属性</h6><p>html5的新增元素，用于大多数作为输入用途的表单元素。在元素内容为空时，不允许提交，同时砸浏览器中显示信息提示文字。</p>
+<h6 id="9、labels属性"><a href="#9、labels属性" class="headerlink" title="9、labels属性"></a>9、labels属性</h6><p>在html5中为页面的可使用标签定义一个labels属性，属性值为NodeLIst对象，代表该元素所绑定的标签元素所构成的集合</p>
+<h6 id="10、标签的control属性"><a href="#10、标签的control属性" class="headerlink" title="10、标签的control属性"></a>10、标签的control属性</h6><p>在html5中，可以在标签内（label元素）放置一个表单元素，并且通过该标签的control属性访问该表单元素。</p>
 
 
                 <hr>
@@ -194,10 +207,10 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/11/22/html5新增表单元素/" data-toggle="tooltip" data-placement="top" title="HTML5新增表单元素">&larr; Previous Post</a>
-                        </li>
                     
+                        <li class="next">
+                            <a href="/2016/09/01/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello World">Next Post &rarr;</a>
+                        </li>
                     
                 </ul>
 
@@ -209,7 +222,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#表单新特性"><span class="toc-text">表单新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、form-属性"><span class="toc-text">1、form 属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2、placeholder属性"><span class="toc-text">2、placeholder属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3、autofocus属性"><span class="toc-text">3、autofocus属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5、formmethod属性"><span class="toc-text">5、formmethod属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6、formenctype属性"><span class="toc-text">6、formenctype属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#7、formarget属性"><span class="toc-text">7、formarget属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#8、required属性"><span class="toc-text">8、required属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#9、labels属性"><span class="toc-text">9、labels属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#10、标签的control属性"><span class="toc-text">10、标签的control属性</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
