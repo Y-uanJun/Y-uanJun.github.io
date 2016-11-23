@@ -132,13 +132,13 @@
 <!--only post-->
 
     
-        <img class="wechat-title-img" src="">
+        <img class="wechat-title-img" src="undefinedimg/bg.jpg">
     
 
 <style>
 
     header.intro-header{
-        background-image: url('')
+        background-image: url('undefinedimg/bg.jpgundefined')
     }
 
 </style>
@@ -185,7 +185,7 @@
     //获取成功时的回调函数
 }</code></p>
 <h6 id="position对象"><a href="#position对象" class="headerlink" title="position对象"></a>position对象</h6><p>在成功获取地理位置信息后。可以通过访问position对象的属性来获得这些地理信息。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2488657-9bb15551d07bc03d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="position属性.jpg"><br>latitude：当前地理位置的纬度<br>longitude：当前地理位置的经度<br>altitude：当前地理位置的海拔高度<br>accuracy：获取到的经度或者纬度的精度<br>altitudeAccuracy：获取到的海拔高度的精度<br>heading：设备的前进方向<br>speed：设备的前进速度<br>timestamp：获取地理位置信息时的时间</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2488657-9bb15551d07bc03d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="position属性.jpg"></p>
 <p>第二个参数onError为获取地理位置失败时执行的回调函数。如果用户拒绝共享也会造成错误发生。<br>该回调函数使用error对象作为参数，该对象有两个属性：<br>a：code属性</p>
 <blockquote>
 <p>code 属性为以下三个值的其中一个：<br>用户拒绝位置服务（属性值为1）<br>获取不到位置信息（属性值为2）<br>获取信息超时错误（属性值为3）</p>
