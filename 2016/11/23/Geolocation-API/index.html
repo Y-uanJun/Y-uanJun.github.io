@@ -17,11 +17,11 @@
 
     <title>
         
-          HTML5新增表单元素｜undefined
+          Geolocation API｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/11/22/html5新增表单元素/">
+    <link rel="canonical" href="http://yoursite.com/2016/11/23/Geolocation-API/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -148,12 +148,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>HTML5新增表单元素</h1>
+                    <h1>Geolocation API</h1>
                     
                     <span class="meta">
                          作者 YuanJun
                          <span>
-                          日期 2016-11-22
+                          日期 2016-11-23
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -167,7 +167,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            HTML5新增表单元素
+            Geolocation API
         </span>
     </div>
 </header>
@@ -179,26 +179,39 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <h5 id="表单新特性"><a href="#表单新特性" class="headerlink" title="表单新特性"></a>表单新特性</h5><h6 id="1、form-属性"><a href="#1、form-属性" class="headerlink" title="1、form 属性"></a>1、form 属性</h6><p>在html4中表单内的从属元素必须写在表单内部，而在html5中，指定form元素的id值后，只需要给外部的表单元素指定相同的id值，便可以保持从属关系，即表单内的元素不再依赖于form的位置，可以写在任何地方。</p>
-<h6 id="2、placeholder属性"><a href="#2、placeholder属性" class="headerlink" title="2、placeholder属性"></a>2、placeholder属性</h6><p><code>&lt;input type=&quot;text&quot; placeholder=&quot;请输入内容&quot;&gt;</code></p>
-<p>如上代码，placeholder一般用在文本输入框，显示未输入状态且内容为空时的提示内容</p>
-<h6 id="3、autofocus属性"><a href="#3、autofocus属性" class="headerlink" title="3、autofocus属性"></a>3、autofocus属性</h6><p>指定空间自动获得焦点，一个html页面只能有一个控件具有该属性。</p>
+                <p>也许很多人都遇到过类似的经历，在手机上打开网页时，会弹出一个选择框，提示是否允许网站获得您的当前位置，这个就是常见的地理位置功能。<br>在HTML 5中，为window.navigator对象新增了geolocation属性，可以使用Geolocation API对其进行访问。</p>
+<h3 id="方法使用"><a href="#方法使用" class="headerlink" title="方法使用"></a>方法使用</h3><p>window.navigator对象的geolocation属性有以下三个方法getCurrentPosition()、watchposition()、clearWatch()。</p>
+<h3 id="getCurrentPosition-onSuccess-onError-options"><a href="#getCurrentPosition-onSuccess-onError-options" class="headerlink" title="getCurrentPosition(onSuccess,onError,options)"></a>getCurrentPosition(onSuccess,onError,options)</h3><p>用来获取用户当前地理位置。<br>第一个参数onSuccess为获取当前地理位置成功时的回调函数。<br><code>navigator.geolocation.getCurrentPosition(position){
+    //获取成功时的回调函数
+}</code></p>
+<h6 id="position对象"><a href="#position对象" class="headerlink" title="position对象"></a>position对象</h6><p>在成功获取地理位置信息后。可以通过访问position对象的属性来获得这些地理信息。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2488657-9bb15551d07bc03d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="position属性.jpg"><br>latitude：当前地理位置的纬度<br>longitude：当前地理位置的经度<br>altitude：当前地理位置的海拔高度<br>accuracy：获取到的经度或者纬度的精度<br>altitudeAccuracy：获取到的海拔高度的精度<br>heading：设备的前进方向<br>speed：设备的前进速度<br>timestamp：获取地理位置信息时的时间</p>
+<p>第二个参数onError为获取地理位置失败时执行的回调函数。如果用户拒绝共享也会造成错误发生。<br>该回调函数使用error对象作为参数，该对象有两个属性：<br>a：code属性</p>
 <blockquote>
-<p>从实用角度来看不要滥用该属性。到目前为止，支撑该属性的浏览器有Safari 5、Google Chrome 6以上版本、FireFox 4、Opera10以上版本、IE 10</p>
+<p>code 属性为以下三个值的其中一个：<br>用户拒绝位置服务（属性值为1）<br>获取不到位置信息（属性值为2）<br>获取信息超时错误（属性值为3）</p>
 </blockquote>
-<p>######4、formanction属性######<br>在HTML4中，一个表单内的元素只能通过anction属性统一提交到另一个页面，但是在HTML5中，可以用不同的formaction属性，将使得点击不同按钮时，能提交到不同的页面<br><code>&lt;form id=&quot;textform&quot; anction=&quot;save.jsp&quot;&gt;
-       &lt;input type=&quot;submit&quot; name=&quot;submit1&quot; formaction=&quot;submit1.jsp&quot;&gt;
-       &lt;input type=&quot;submit&quot; name=&quot;submit2&quot; formaction=&quot;submit2.jsp&quot;&gt;
-&lt;/form&gt;</code></p>
-<h6 id="5、formmethod属性"><a href="#5、formmethod属性" class="headerlink" title="5、formmethod属性"></a>5、formmethod属性</h6><p>在html4中，method指定提交的方法，并且一个表单内只能有一个method来指定提交方法，但是在html5中，可以通过formmethod属性对每个表单元素指定不同的提交方法。</p>
-<h6 id="6、formenctype属性"><a href="#6、formenctype属性" class="headerlink" title="6、formenctype属性"></a>6、formenctype属性</h6><p>在html4中，enctype用来指定表单发送到服务器之前应该如何对哦表单内数据进行编码，同样的一个表单也只能有一个enctype属性。但是在html5中，可以使用formenctype属性对不同的表单元素指定不同的编码方式。</p>
-<h6 id="7、formarget属性"><a href="#7、formarget属性" class="headerlink" title="7、formarget属性"></a>7、formarget属性</h6><p>在html4中表单元素具有一个target属性，用来指定砸何处打开表单提交后所需加载的页面，其中以下五个属性值<br>_blank:在新的浏览器窗口中打开<br>_self:默认值，在相同框架（frame）中打开<br>_parent:砸当前框架（frame）的父框架（frame）中打开<br>_top:在当前浏览器窗口中打开<br>framename:在指定的框架（frame）中打开</p>
+<p>b：message属性</p>
 <blockquote>
-<p>到目前为止，支撑formanction、formmethod、formenctype、formtarget属性的浏览器有Safari 5、Google Chrome 6以上版本、FireFox 4、Opera10.05以上版本、IE 10</p>
+<p>message属性为一个字符串，该字符串包含了错误信息，有些浏览器不支持这一属性，比如Firefox 3.6以上</p>
 </blockquote>
-<h6 id="8、required属性"><a href="#8、required属性" class="headerlink" title="8、required属性"></a>8、required属性</h6><p>html5的新增元素，用于大多数作为输入用途的表单元素。在元素内容为空时，不允许提交，同时砸浏览器中显示信息提示文字。</p>
-<h6 id="9、labels属性"><a href="#9、labels属性" class="headerlink" title="9、labels属性"></a>9、labels属性</h6><p>在html5中为页面的可使用标签定义一个labels属性，属性值为NodeLIst对象，代表该元素所绑定的标签元素所构成的集合</p>
-<h6 id="10、标签的control属性"><a href="#10、标签的control属性" class="headerlink" title="10、标签的control属性"></a>10、标签的control属性</h6><p>在html5中，可以在标签内（label元素）放置一个表单元素，并且通过该标签的control属性访问该表单元素。</p>
+<p><code>navigator.geolocation.getCurrentPosition(function(position){
+    var coords = position.coords;
+    showMap(coords.latitude,coords.longitude,coords.accuracy);
+    },
+    function(error){
+    var errorTypes = {
+    1:&quot;位置服务被拒绝&quot;,
+    2:&quot;获取不到位置信息&quot;,
+    3:&quot;获取信息超时&quot;
+    };
+    alert(errorTypes [error.code]+&quot;:获取信息失败&quot;)
+    };
+);</code><br>第三个参数是一些可选属性的列表。<br>timeout：对地理位置信息的获取操作做出一个超时限制，超过时间返回错误。<br>maximumAge：对地理信息进行缓存的有效时间</p>
+<blockquote>
+<p>多数情况下这些属性设为默认值，有设备自身来调整</p>
+</blockquote>
+<h3 id="watchPosition"><a href="#watchPosition" class="headerlink" title="watchPosition()"></a>watchPosition()</h3><p>持续监视当前地理位置的信息</p>
+<h3 id="clearWatch"><a href="#clearWatch" class="headerlink" title="clearWatch()"></a>clearWatch()</h3><p>停止对当前地理位置信息的监视<br>watchId=watchCurrentPosition(onSuccess,onError,options);<br>//持续监视地理位置信息，返回一个数字<br>clearWatch(watchId);</p>
 
 
                 <hr>
@@ -207,13 +220,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/11/23/Geolocation-API/" data-toggle="tooltip" data-placement="top" title="Geolocation API">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/09/01/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello World">Next Post &rarr;</a>
+                            <a href="/2016/11/22/html5新增表单元素/" data-toggle="tooltip" data-placement="top" title="HTML5新增表单元素">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -226,7 +235,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#表单新特性"><span class="toc-text">表单新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、form-属性"><span class="toc-text">1、form 属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2、placeholder属性"><span class="toc-text">2、placeholder属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3、autofocus属性"><span class="toc-text">3、autofocus属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5、formmethod属性"><span class="toc-text">5、formmethod属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6、formenctype属性"><span class="toc-text">6、formenctype属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#7、formarget属性"><span class="toc-text">7、formarget属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#8、required属性"><span class="toc-text">8、required属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#9、labels属性"><span class="toc-text">9、labels属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#10、标签的control属性"><span class="toc-text">10、标签的control属性</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法使用"><span class="toc-text">方法使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getCurrentPosition-onSuccess-onError-options"><span class="toc-text">getCurrentPosition(onSuccess,onError,options)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#position对象"><span class="toc-text">position对象</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#watchPosition"><span class="toc-text">watchPosition()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clearWatch"><span class="toc-text">clearWatch()</span></a></li></ol>
                 </div>
             </div>
         </div>
