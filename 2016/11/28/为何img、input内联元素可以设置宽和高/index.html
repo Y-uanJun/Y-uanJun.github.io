@@ -17,11 +17,11 @@
 
     <title>
         
-          Geolocation API｜undefined
+          为何img、input内联元素可以设置宽和高｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/11/23/Geolocation-API/">
+    <link rel="canonical" href="http://yoursite.com/2016/11/28/为何img、input内联元素可以设置宽和高/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -132,13 +132,13 @@
 <!--only post-->
 
     
-        <img class="wechat-title-img" src="undefinedhttp://www.cinelounge.org/imgfull/210933.jpg">
+        <img class="wechat-title-img" src="undefinedhttp://bpic.588ku.com/back_pic/00/01/77/51/6adf978d27fc92e165a5be81395d366f.jpg">
     
 
 <style>
 
     header.intro-header{
-        background-image: url('undefinedhttp://www.cinelounge.org/imgfull/210933.jpgundefined')
+        background-image: url('undefinedhttp://bpic.588ku.com/back_pic/00/01/77/51/6adf978d27fc92e165a5be81395d366f.jpgundefined')
     }
 
 </style>
@@ -148,17 +148,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Geolocation API</h1>
+                    <h1>为何img、input内联元素可以设置宽和高</h1>
                     
                     <span class="meta">
                          作者 YuanJun
                          <span>
-                          日期 2016-11-23
+                          日期 2016-11-28
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#HTML5" title="HTML5">HTML5</a>
+                        <a class="tag" href="/tags/#css" title="css">css</a>
                         
                     </div>
                 </div>
@@ -167,7 +167,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Geolocation API
+            为何img、input内联元素可以设置宽和高
         </span>
     </div>
 </header>
@@ -179,39 +179,16 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>也许很多人都遇到过类似的经历，在手机上打开网页时，会弹出一个选择框，提示是否允许网站获得您的当前位置，这个就是常见的地理位置功能。<br>在HTML 5中，为window.navigator对象新增了geolocation属性，可以使用Geolocation API对其进行访问。</p>
-<h3 id="方法使用"><a href="#方法使用" class="headerlink" title="方法使用"></a>方法使用</h3><p>window.navigator对象的geolocation属性有以下三个方法getCurrentPosition()、watchposition()、clearWatch()。</p>
-<h3 id="getCurrentPosition-onSuccess-onError-options"><a href="#getCurrentPosition-onSuccess-onError-options" class="headerlink" title="getCurrentPosition(onSuccess,onError,options)"></a>getCurrentPosition(onSuccess,onError,options)</h3><p>用来获取用户当前地理位置。<br>第一个参数onSuccess为获取当前地理位置成功时的回调函数。<br><code>navigator.geolocation.getCurrentPosition(position){
-    //获取成功时的回调函数
-}</code></p>
-<h6 id="position对象"><a href="#position对象" class="headerlink" title="position对象"></a>position对象</h6><p>在成功获取地理位置信息后。可以通过访问position对象的属性来获得这些地理信息。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2488657-9bb15551d07bc03d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="position属性.jpg"></p>
-<p>第二个参数onError为获取地理位置失败时执行的回调函数。如果用户拒绝共享也会造成错误发生。<br>该回调函数使用error对象作为参数，该对象有两个属性：<br>a：code属性</p>
+                <p>元素是文档结构的基础，在CSS中，每个元素生成了一个包含了元素内容的框（box，也译为“盒子”）。但是不同的元素显示的方式会有所不同，例如div和span就不同，而strong和p也不一样。在文档类型定义（DTD）中对不同的元素规定了不同的类型，这也是DTD对文档之所以重要的原因之一。</p>
+<h4 id="1-替换和不可替换元素"><a href="#1-替换和不可替换元素" class="headerlink" title="1. 替换和不可替换元素"></a>1. 替换和不可替换元素</h4><p>从元素本身的特点来讲，可以分为替换和不可替换元素。</p>
+<h6 id="a-替换元素"><a href="#a-替换元素" class="headerlink" title="a) 替换元素"></a>a) 替换元素</h6><p>替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。<br>例如浏览器会根据 img 标签的src属性的值来读取图片信息并显示出来，而如果查看HTML代码，则看不到图片的实际内容；又例如根据 input 标签的type属性来决定是显示输入框，还是单选按钮等。<br>HTML中的img、input、textarea、select、objec&gt;都是替换元素。这些元素往往没有实际的内容，即是一个空元素，浏览器会根据元素的标签类型和属性来显示这些元素。可替换元素也在其显示中生成了框。</p>
+<h6 id="b-不可替换元素"><a href="#b-不可替换元素" class="headerlink" title="b) 不可替换元素"></a>b) 不可替换元素</h6><p>HTML 的大多数元素是不可替换元素，即其内容直接表现给用户端（例如浏览器）。例如：段落 p 是一个不可替换元素，文字“段落的内容”全被显示。</p>
+<h4 id="2-显示元素"><a href="#2-显示元素" class="headerlink" title="2. 显示元素"></a>2. 显示元素</h4><p>除了可替换元素和不可替换元素的分类方式外，CSS 2.1中元素还有另外的分类方式：块级元素（block-level）和行内元素（inline-level，也译作“内联”元素）。</p>
+<h6 id="a-块级元素"><a href="#a-块级元素" class="headerlink" title="a) 块级元素"></a>a) 块级元素</h6><p>在视觉上被格式化为块的元素，最明显的特征就是它默认在横向充满其父元素的内容区域，而且在其左右两边没有其他元素，即块级元素默认是独占一行的。<br>典型的块级元素有：div、p、h1到h6，table、td、tr、ul、li等等。<br>通过CSS设定了浮动（float属性，可向左浮动或向右浮动）以及设定显示（display）属性为“block”或“list-item”的元素都是块级元素。<br>但是浮动元素比较特殊，由于浮动，其旁边可能会有其他元素的存在。而“list-item”（列表项<li>），会在其前面生成圆点符号，或者数字序号。</li></p>
+<h6 id="b-行内元素"><a href="#b-行内元素" class="headerlink" title="b) 行内元素"></a>b) 行内元素</h6><p>行内元素不形成新内容块，即在其左右可以有其他元素，例如a、span、strong、input 、label等，都是典型的行内级元素。<br>display属性等于“inline”的元素都是行内元素。几乎所有的可替换元素都是行内元素，例如img、input等等。<br>不过元素的类型也不是固定的，通过设定CSS 的display属性，可以使行内元素变为块级元素，也可以让块级元素变为行内元素。</p>
 <blockquote>
-<p>code 属性为以下三个值的其中一个：<br>用户拒绝位置服务（属性值为1）<br>获取不到位置信息（属性值为2）<br>获取信息超时错误（属性值为3）</p>
+<p>替换元素一般有内在尺寸，所以具有width和height，可以设定。例如当不指定img的width和height时，就按其内在尺寸显示，也就是图片被保存的时候的宽度和高度。<br>对于表单元素，浏览器也有默认的样式，包括宽度和高度。</p>
 </blockquote>
-<p>b：message属性</p>
-<blockquote>
-<p>message属性为一个字符串，该字符串包含了错误信息，有些浏览器不支持这一属性，比如Firefox 3.6以上</p>
-</blockquote>
-<p><code>navigator.geolocation.getCurrentPosition(function(position){
-    var coords = position.coords;
-    showMap(coords.latitude,coords.longitude,coords.accuracy);
-    },
-    function(error){
-    var errorTypes = {
-    1:&quot;位置服务被拒绝&quot;,
-    2:&quot;获取不到位置信息&quot;,
-    3:&quot;获取信息超时&quot;
-    };
-    alert(errorTypes [error.code]+&quot;:获取信息失败&quot;)
-    };
-);</code><br>第三个参数是一些可选属性的列表。<br>timeout：对地理位置信息的获取操作做出一个超时限制，超过时间返回错误。<br>maximumAge：对地理信息进行缓存的有效时间</p>
-<blockquote>
-<p>多数情况下这些属性设为默认值，有设备自身来调整</p>
-</blockquote>
-<h3 id="watchPosition"><a href="#watchPosition" class="headerlink" title="watchPosition()"></a>watchPosition()</h3><p>持续监视当前地理位置的信息</p>
-<h3 id="clearWatch"><a href="#clearWatch" class="headerlink" title="clearWatch()"></a>clearWatch()</h3><p>停止对当前地理位置信息的监视<br>watchId=watchCurrentPosition(onSuccess,onError,options);<br>//持续监视地理位置信息，返回一个数字<br>clearWatch(watchId);</p>
 
 
                 <hr>
@@ -220,13 +197,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/11/28/为何img、input内联元素可以设置宽和高/" data-toggle="tooltip" data-placement="top" title="为何img、input内联元素可以设置宽和高">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/11/22/html5新增表单元素/" data-toggle="tooltip" data-placement="top" title="HTML5新增表单元素">Next Post &rarr;</a>
+                            <a href="/2016/11/23/Geolocation-API/" data-toggle="tooltip" data-placement="top" title="Geolocation API">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -239,7 +212,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法使用"><span class="toc-text">方法使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getCurrentPosition-onSuccess-onError-options"><span class="toc-text">getCurrentPosition(onSuccess,onError,options)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#position对象"><span class="toc-text">position对象</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#watchPosition"><span class="toc-text">watchPosition()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clearWatch"><span class="toc-text">clearWatch()</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-替换和不可替换元素"><span class="toc-text">1. 替换和不可替换元素</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#a-替换元素"><span class="toc-text">a) 替换元素</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#b-不可替换元素"><span class="toc-text">b) 不可替换元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-显示元素"><span class="toc-text">2. 显示元素</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#a-块级元素"><span class="toc-text">a) 块级元素</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#b-行内元素"><span class="toc-text">b) 行内元素</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
