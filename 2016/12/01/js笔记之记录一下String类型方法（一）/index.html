@@ -17,11 +17,11 @@
 
     <title>
         
-          为何img、input内联元素可以设置宽和高｜undefined
+          js笔记之记录一下String类型方法（一）｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/11/28/为何img、input内联元素可以设置宽和高/">
+    <link rel="canonical" href="http://yoursite.com/2016/12/01/js笔记之记录一下String类型方法（一）/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -148,17 +148,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>为何img、input内联元素可以设置宽和高</h1>
+                    <h1>js笔记之记录一下String类型方法（一）</h1>
                     
                     <span class="meta">
                          作者 YuanJun
                          <span>
-                          日期 2016-11-28
+                          日期 2016-12-01
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#css" title="css">css</a>
+                        <a class="tag" href="/tags/#javascript,笔记" title="javascript,笔记">javascript,笔记</a>
                         
                     </div>
                 </div>
@@ -167,7 +167,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            为何img、input内联元素可以设置宽和高
+            js笔记之记录一下String类型方法（一）
         </span>
     </div>
 </header>
@@ -179,16 +179,29 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>元素是文档结构的基础，在CSS中，每个元素生成了一个包含了元素内容的框（box，也译为“盒子”）。但是不同的元素显示的方式会有所不同，例如div和span就不同，而strong和p也不一样。在文档类型定义（DTD）中对不同的元素规定了不同的类型，这也是DTD对文档之所以重要的原因之一。</p>
-<h4 id="1-替换和不可替换元素"><a href="#1-替换和不可替换元素" class="headerlink" title="1. 替换和不可替换元素"></a>1. 替换和不可替换元素</h4><p>从元素本身的特点来讲，可以分为替换和不可替换元素。</p>
-<h6 id="a-替换元素"><a href="#a-替换元素" class="headerlink" title="a) 替换元素"></a>a) 替换元素</h6><p>替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。<br>例如浏览器会根据 img 标签的src属性的值来读取图片信息并显示出来，而如果查看HTML代码，则看不到图片的实际内容；又例如根据 input 标签的type属性来决定是显示输入框，还是单选按钮等。<br>HTML中的img、input、textarea、select、objec&gt;都是替换元素。这些元素往往没有实际的内容，即是一个空元素，浏览器会根据元素的标签类型和属性来显示这些元素。可替换元素也在其显示中生成了框。</p>
-<h6 id="b-不可替换元素"><a href="#b-不可替换元素" class="headerlink" title="b) 不可替换元素"></a>b) 不可替换元素</h6><p>HTML 的大多数元素是不可替换元素，即其内容直接表现给用户端（例如浏览器）。例如：段落 p 是一个不可替换元素，文字“段落的内容”全被显示。</p>
-<h4 id="2-显示元素"><a href="#2-显示元素" class="headerlink" title="2. 显示元素"></a>2. 显示元素</h4><p>除了可替换元素和不可替换元素的分类方式外，CSS 2.1中元素还有另外的分类方式：块级元素（block-level）和行内元素（inline-level，也译作“内联”元素）。</p>
-<h6 id="a-块级元素"><a href="#a-块级元素" class="headerlink" title="a) 块级元素"></a>a) 块级元素</h6><p>在视觉上被格式化为块的元素，最明显的特征就是它默认在横向充满其父元素的内容区域，而且在其左右两边没有其他元素，即块级元素默认是独占一行的。<br>典型的块级元素有：div、p、h1到h6，table、td、tr、ul、li等等。<br>通过CSS设定了浮动（float属性，可向左浮动或向右浮动）以及设定显示（display）属性为“block”或“list-item”的元素都是块级元素。<br>但是浮动元素比较特殊，由于浮动，其旁边可能会有其他元素的存在。而“list-item”（列表项<li>），会在其前面生成圆点符号，或者数字序号。</li></p>
-<h6 id="b-行内元素"><a href="#b-行内元素" class="headerlink" title="b) 行内元素"></a>b) 行内元素</h6><p>行内元素不形成新内容块，即在其左右可以有其他元素，例如a、span、strong、input 、label等，都是典型的行内级元素。<br>display属性等于“inline”的元素都是行内元素。几乎所有的可替换元素都是行内元素，例如img、input等等。<br>不过元素的类型也不是固定的，通过设定CSS 的display属性，可以使行内元素变为块级元素，也可以让块级元素变为行内元素。</p>
+                <p>在javascript代码中，字符串是相当常见的。ECMAScript提供了多种方法以便程序员处理字符串。最近在项目中用到一些Sting类型的方法，在这里做一个小笔记。</p>
+<h4 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h4><p>String类型其实就是字符串的对象包装类型，可以使用new来创建。<br>比如 var string = new String(“hello world”);其创建的实例有一个length属性。</p>
+<h4 id="各类方法"><a href="#各类方法" class="headerlink" title="各类方法"></a>各类方法</h4><h5 id="字符方法charAt-和charCodeAt"><a href="#字符方法charAt-和charCodeAt" class="headerlink" title="字符方法charAt()和charCodeAt()"></a>字符方法charAt()和charCodeAt()</h5><p><img src="http://upload-images.jianshu.io/upload_images/2488657-b2f25de76cdd3a8c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="字符方法.jpg"><br>这两种方法都是以单字符字符串的形式返回给定位置的字符，不同的是charAt()方法返回的是字符，而charCodeAt()返回的是相应字符的字符编码。</p>
 <blockquote>
-<p>替换元素一般有内在尺寸，所以具有width和height，可以设定。例如当不指定img的width和height时，就按其内在尺寸显示，也就是图片被保存的时候的宽度和高度。<br>对于表单元素，浏览器也有默认的样式，包括宽度和高度。</p>
+<p>从上图就可以看出，charAt(2)返回的是字符“l”，而charCodeAt()返回的是字符编码“108”。当然在javascript中要想访问字符串中特定位置的字符，可以使用方括号加数字索引的方式，比如 stringValue[2]，同样返回字符“l”。</p>
 </blockquote>
+<h5 id="字符操作方法"><a href="#字符操作方法" class="headerlink" title="字符操作方法"></a>字符操作方法</h5><h6 id="1、concat"><a href="#1、concat" class="headerlink" title="1、concat()"></a>1、concat()</h6><p>用于将一个或者多个字符串拼接起来。<br>不过，大多数时候，通常用“+”号操作符来拼接字符串</p>
+<h6 id="2、slice-substring-substr"><a href="#2、slice-substring-substr" class="headerlink" title="2、slice()  substring()  substr()"></a>2、slice()  substring()  substr()</h6><p>返回被操作字符串的子字符串，可以说是截取一段字符串。<br>这三个方法都接受两参数<br>第一个参数:指定字符串的开始位置。<br>第二个参数:对于slice()和substring()来说指定字符串的结束位置，若不填，这结束位置是字符串的最后一位。而对于substr()方法来说，则是指定返回的字符个数<br>大多数情况下这三个方法返回的相同的。具体如下面代码所示</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2488657-0614344423913eec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="字符串操作.jpg"><br>当接受两个参数时，slice()和substring()返回“lo w”，从位置三开始，到位置7结束，但不包含位置7，因此不包含字符“o”；<br>而substr()方法则是返回“lo world”，因为第二个参数的意思是返回字符串长度为7的字符串。<br>同样执行者三种方法对原字符串无影响。</p>
+<h5 id="字符串位置方法indexOf-和lastIndexOf"><a href="#字符串位置方法indexOf-和lastIndexOf" class="headerlink" title="字符串位置方法indexOf()和lastIndexOf()"></a>字符串位置方法indexOf()和lastIndexOf()</h5><p>这两个方法都是搜索一个字符串中的子字符串，然后返回这个字符串的位置。如下面代码所示</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2488657-16eab04e7a192c48.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="字符串位置方法.jpg"><br>这两个方法都有两个参数。<br>第一个参数是指定搜索的字符串<br>第二个参数是指定搜索开始的位置，默认从0开始。</p>
+<h5 id="trim-方法"><a href="#trim-方法" class="headerlink" title="trim()方法"></a>trim()方法</h5><p>这个方法就是创建一个字符串副本，删除前置及后缀的所有空格，然后返回删除后的字符串。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2488657-81368647581521ff.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="trim.jpg"><br>从上面代码可以看出，执行了trim()方法后，原字符串前面和后面的空格都删掉了。但是trim()方法只是创建了一个字符串副本，因此原字符串不改变。</p>
+<blockquote>
+<p>目前支持这个方法的浏览器有IE9+、Firefox3.5+、Safari5+、和Opera0.5+和Chrome。<br>此外，Firefox3.5+、Safari5+和Chrome 8+还支持非标准的trimLeft()——用于删除字符串开头空格；trimRight()——用于删除字符串末尾空格。</p>
+</blockquote>
+<h5 id="字符串分割split"><a href="#字符串分割split" class="headerlink" title="字符串分割split()"></a>字符串分割split()</h5><p>split()方法接受两个参数。<br>第一个参数是字符串或者是正则表达式，从该参数指定的地方分割字符串，必填<br>第二个参数是指定返回的数组的最大长度，可选。</p>
+<h5 id="split-方法实例"><a href="#split-方法实例" class="headerlink" title="split()方法实例"></a>split()方法实例</h5><p>从字符串中将字符分割为一个数组<br><code>var string=&quot;This is one sentence.This is a sentence with a list of items:&quot;+&quot;cherries,oranges,apples,bananas.It is OK&quot;;
+    var start=string.indexOf(&quot;:&quot;),
+        end=string.indexOf(&quot;.&quot;,start+1);
+        listStr=string.substring(start+1,end);
+    var listArray=listStr.split(&quot;,&quot;);
+    console.log(listArray);</code><br>返回结果如下<br><img src="http://upload-images.jianshu.io/upload_images/2488657-37bc4afdb251a29f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="result.jpg"></p>
 
 
                 <hr>
@@ -197,13 +210,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/12/01/js笔记之记录一下String类型方法（一）/" data-toggle="tooltip" data-placement="top" title="js笔记之记录一下String类型方法（一）">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/11/23/Geolocation-API/" data-toggle="tooltip" data-placement="top" title="Geolocation API">Next Post &rarr;</a>
+                            <a href="/2016/11/28/为何img、input内联元素可以设置宽和高/" data-toggle="tooltip" data-placement="top" title="为何img、input内联元素可以设置宽和高">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -216,7 +225,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-替换和不可替换元素"><span class="toc-text">1. 替换和不可替换元素</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#a-替换元素"><span class="toc-text">a) 替换元素</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#b-不可替换元素"><span class="toc-text">b) 不可替换元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-显示元素"><span class="toc-text">2. 显示元素</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#a-块级元素"><span class="toc-text">a) 块级元素</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#b-行内元素"><span class="toc-text">b) 行内元素</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#开篇"><span class="toc-text">开篇</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#各类方法"><span class="toc-text">各类方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#字符方法charAt-和charCodeAt"><span class="toc-text">字符方法charAt()和charCodeAt()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字符操作方法"><span class="toc-text">字符操作方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、concat"><span class="toc-text">1、concat()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2、slice-substring-substr"><span class="toc-text">2、slice()  substring()  substr()</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串位置方法indexOf-和lastIndexOf"><span class="toc-text">字符串位置方法indexOf()和lastIndexOf()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#trim-方法"><span class="toc-text">trim()方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串分割split"><span class="toc-text">字符串分割split()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#split-方法实例"><span class="toc-text">split()方法实例</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
