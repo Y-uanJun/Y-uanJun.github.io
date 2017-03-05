@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="YuanJun&#39;s blog">
+    <meta name="keyword"  content="undefined">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#60090">
+    <link rel="shortcut icon" href="/img/coffee.png">
+    <link rel="alternate" type="application/atom+xml" title="YuanJun" href="/atom.xml">
+
+    <title>
+        
+          CSS中的z-index｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2017/03/05/CSS中的z-index/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<style>
+
+    header.intro-header{
+        background-image: url('undefined')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span class="brand-logo">
+                    YuanJun
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!--only post-->
+
+    
+        <img class="wechat-title-img" src="undefinedhttp://bpic.588ku.com/back_pic/00/01/77/51/6adf978d27fc92e165a5be81395d366f.jpg">
+    
+
+<style>
+
+    header.intro-header{
+        background-image: url('undefinedhttp://bpic.588ku.com/back_pic/00/01/77/51/6adf978d27fc92e165a5be81395d366f.jpgundefined')
+    }
+
+</style>
+
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>CSS中的z-index</h1>
+                    
+                    <span class="meta">
+                         作者 YuanJun
+                         <span>
+                          日期 2017-03-05
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            CSS中的z-index
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+                <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+
+                <p>在w3c中z-index的定义是：设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。<br>但是在设置z-index中有时会发现将z-index设置到999或者更大的时候，并没有出现我们想象中的效果，这和z-index的顺序规则有关。</p>
+<h4 id="1、z-index的三个属性值"><a href="#1、z-index的三个属性值" class="headerlink" title="1、z-index的三个属性值"></a>1、z-index的三个属性值</h4><p>（1）auto：默认。堆叠顺序与父元素相等。<br>（2）number ：设置元素的堆叠顺序。<br>（3）inherit ：规定应该从父元素继承 z-index 属性的值。</p>
+<h4 id="2、层级关系比较"><a href="#2、层级关系比较" class="headerlink" title="2、层级关系比较"></a>2、层级关系比较</h4><ol>
+<li>对于同级元素，默认(或position:static)情况下文档流后面的元素会覆盖前面的。</li>
+<li>对于同级元素，position不为static且z-index存在的情况下z-index大的元素会覆盖z-index小的元素，即z-index越大优先级越高。</li>
+<li>IE6/7下position不为static，且z-index不存在时z-index为0，除此之外的浏览器z-index为auto。</li>
+<li>z-index为auto的元素不参与层级关系的比较，由向上遍历至此且z-index不为auto的元素来参与比较。</li>
+</ol>
+<h4 id="3、几种常见的情况"><a href="#3、几种常见的情况" class="headerlink" title="3、几种常见的情况"></a>3、几种常见的情况</h4><h6 id="顺序规则"><a href="#顺序规则" class="headerlink" title="顺序规则"></a>顺序规则</h6><p>如果不对节点设定 position 属性，位于文档流后面的节点会遮盖前面的节点。</p>
+<h6 id="定位规则"><a href="#定位规则" class="headerlink" title="定位规则"></a>定位规则</h6><p>1、如果将 position 设为 static，位于文档流后面的节点依然会遮盖前面的节点浮动,，所以 position:static 不会影响节点的遮盖关系。</p>
+<p>2、如果将 position 设为 relative (相对定位)，absolute (绝对定位) 或者 fixed (固定定位)，这样的节点会覆盖没有设置 position 属性或者属性值为 static 的节点，说明前者比后者的默认层级高。</p>
+<p>3、在没有 z-index 属性干扰的情况下, 根据顺序规则和定位规则, 我们可以做出更加复杂的结构. 这里我们对 A 和 B 都不设定 position, 但对 A 的子节点 A-1 设定 position:relative. 根据顺序规则, B 会覆盖 A, 又根据定位规则 A-1 会覆盖 B。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		.A,.B,.A-1&#123;</div><div class="line">			display: inline-block;</div><div class="line">			width:100px;</div><div class="line">			height:100px;</div><div class="line">			float:left;</div><div class="line">		&#125;</div><div class="line">		.A&#123;background: blue;</div><div class="line">		&#125;</div><div class="line">		.A-1&#123;background: yellow;</div><div class="line">			position:relative;</div><div class="line">			left:10px;</div><div class="line">		&#125;</div><div class="line">		.B&#123;background: red;</div><div class="line">			margin-left:-30px;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;A&quot;&gt;A</div><div class="line">		&lt;div class=&quot;A-1&quot;&gt;这是A的子节点&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;B&quot;&gt;B&lt;/div&gt;</div><div class="line">	</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>效果如图所示</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2488657-69ba457d2967cf76.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果图.jpg"></p>
+<h6 id="参与规则"><a href="#参与规则" class="headerlink" title="参与规则"></a>参与规则</h6><p>z-index 属性仅在节点的 position 属性为 relative, absolute 或者 fixed 时生效。也就是说不使用position时设置z-index是没有效果的。</p>
+<h6 id="默认值规则"><a href="#默认值规则" class="headerlink" title="默认值规则"></a>默认值规则</h6><p>如果所有节点都定义了 position:relative.。<br>z-index 为 0 的节点与没有定义 z-index 在同一层级内没有高低之分;<br>但 z-index 大于等于 1 的节点会遮盖没有定义 z-index 的节点; z-index 的值为负数的节点将被没有定义 z-index 的节点覆盖。<br>（即在这种情况下，当z-index不为0时，层级高的会覆盖层级底的）。</p>
+<h6 id="从父规则"><a href="#从父规则" class="headerlink" title="从父规则"></a>从父规则</h6><p>1、如果 A, B 节点都定义了 position:relative, A 节点的 z-index 比 B 节点大, 那么 A 的子节点必定覆盖在 B 的子节点前面。</p>
+<p>2、如果所有节点都定义了 position:relative, A 节点的 z-index 和 B 节点一样大, 但因为顺序规则, B 节点覆盖在 A 节点前面. 就算 A 的子节点 z-index 值比 B 的子节点大, B 的子节点还是会覆盖在 A 的子节点前面.</p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/02/19/数据存储以及本地缓存/" data-toggle="tooltip" data-placement="top" title="数据存储以及本地缓存">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col" >
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、z-index的三个属性值"><span class="toc-text">1、z-index的三个属性值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、层级关系比较"><span class="toc-text">2、层级关系比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、几种常见的情况"><span class="toc-text">3、几种常见的情况</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#顺序规则"><span class="toc-text">顺序规则</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#定位规则"><span class="toc-text">定位规则</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#参与规则"><span class="toc-text">参与规则</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#默认值规则"><span class="toc-text">默认值规则</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#从父规则"><span class="toc-text">从父规则</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <span class="text-muted"style="font-size: 14px">双击导航条返回顶部</span>
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YuanJun 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','undefined','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!--wechat title img-->
+    <img class="wechat-title-img" src="undefined">
+</body>
+
+</html>
