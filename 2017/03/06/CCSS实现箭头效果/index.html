@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="YuanJun&#39;s blog">
+    <meta name="keyword"  content="undefined">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#60090">
+    <link rel="shortcut icon" href="/img/coffee.png">
+    <link rel="alternate" type="application/atom+xml" title="YuanJun" href="/atom.xml">
+
+    <title>
+        
+          CCSS实现箭头效果(含js控制伪元素)｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2017/03/06/CCSS实现箭头效果/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<style>
+
+    header.intro-header{
+        background-image: url('undefined')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span class="brand-logo">
+                    YuanJun
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!--only post-->
+
+    
+        <img class="wechat-title-img" src="undefinedhttps://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489414233&di=8757e37ec6b998bb9040ae852d8d31e2&imgtype=jpg&er=1&src=http%3A%2F%2Ft1.niutuku.com%2F960%2F40%2F40-369666.jpg">
+    
+
+<style>
+
+    header.intro-header{
+        background-image: url('undefinedhttps://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489414233&di=8757e37ec6b998bb9040ae852d8d31e2&imgtype=jpg&er=1&src=http%3A%2F%2Ft1.niutuku.com%2F960%2F40%2F40-369666.jpgundefined')
+    }
+
+</style>
+
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>CCSS实现箭头效果(含js控制伪元素)</h1>
+                    
+                    <span class="meta">
+                         作者 YuanJun
+                         <span>
+                          日期 2017-03-06
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            CCSS实现箭头效果(含js控制伪元素)
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+                <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+
+                <p>通过css实现三角形箭头，无须切图，且具有良好的兼容性。</p>
+<p>基本实现原理：通过截取border的部分拐角来实现。</p>
+<h4 id="三角形实现"><a href="#三角形实现" class="headerlink" title="三角形实现"></a>三角形实现</h4><h6 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h6><p>当元素宽、高为零，且其他边为透明颜色时，可以形一个三角形。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">	.arrow &#123;</div><div class="line">			border: 20px solid #000;</div><div class="line">			border-left: 20px solid #f00;</div><div class="line">			width: 0;</div><div class="line">			height: 0;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.arrow-right &#123;</div><div class="line">			margin-top:20px;</div><div class="line">			border: 20px solid transparent;</div><div class="line">			border-left: 20px solid #f00;</div><div class="line">			width: 0;</div><div class="line">			height: 0;</div><div class="line">		&#125;</div><div class="line">		.arrow-left &#123;</div><div class="line">			margin-top:20px;</div><div class="line">			border: 20px solid transparent;</div><div class="line">			border-right: 20px solid #f00;</div><div class="line">			width: 0;</div><div class="line">			height: 0;</div><div class="line">		&#125;</div><div class="line">		.arrow-top &#123;</div><div class="line">			margin-top:20px;</div><div class="line">			border: 20px solid transparent;</div><div class="line">			border-bottom: 20px solid #f00;</div><div class="line">			width: 0;</div><div class="line">			height: 0;</div><div class="line">		&#125;</div><div class="line">		.arrow-down &#123;</div><div class="line">			margin-top:20px;</div><div class="line">			border: 20px solid transparent;</div><div class="line">			border-top: 20px solid #f00;</div><div class="line">			width: 0;</div><div class="line">			height: 0;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;p&gt;当元素宽、高为零，且其他边为透明颜色时，可以形一个三角形&lt;/p&gt;</div><div class="line">	&lt;p&gt;红色部分是箭头&lt;/p&gt;</div><div class="line">	&lt;div class=&quot;arrow&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;p&gt;将黑色部分变成透明&lt;/p&gt;</div><div class="line">	&lt;!-- 向右的箭头 --&gt;</div><div class="line">	&lt;div class=&quot;arrow-right&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;!-- 向左的箭头 --&gt;</div><div class="line">	&lt;div class=&quot;arrow-left&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;!-- 向下的箭头 --&gt;</div><div class="line">	&lt;div class=&quot;arrow-down&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;!-- 向上的箭头 --&gt;</div><div class="line">	&lt;div class=&quot;arrow-top&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2488657-3ff536e35050346b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="箭头.jpg"></p>
+<h6 id="方法二：使用伪类"><a href="#方法二：使用伪类" class="headerlink" title="方法二：使用伪类"></a>方法二：使用伪类</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">	body&#123;</div><div class="line">		text-align: center;</div><div class="line">	&#125;</div><div class="line">	.arrow&#123;</div><div class="line">		position: relative;</div><div class="line">	&#125;</div><div class="line">	.arrow:after &#123;</div><div class="line">		border: 10px solid transparent;</div><div class="line">		border-left: 10px solid #f00;</div><div class="line">		width: 0;</div><div class="line">		height: 0;</div><div class="line">		position: absolute;</div><div class="line">		content: &apos; &apos;</div><div class="line">	&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;arrow&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h4 id="箭头实现"><a href="#箭头实现" class="headerlink" title="箭头实现"></a>箭头实现</h4><h6 id="伪元素实现"><a href="#伪元素实现" class="headerlink" title="伪元素实现"></a>伪元素实现</h6><p>基本原理：通过伪元素绘制出两个，一个与背景色相同覆盖部分红色箭头，形成三角线。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">	.arrow&#123;</div><div class="line">		position: relative;</div><div class="line">	&#125;</div><div class="line">	.arrow:after, .arrow:before &#123;</div><div class="line">		border: 30px solid transparent;</div><div class="line">		border-left: 30px solid #fff;</div><div class="line">		width: 0;</div><div class="line">		height: 0;</div><div class="line">		position: absolute;</div><div class="line">		top: 5px;</div><div class="line">		left: 25px;</div><div class="line">		content: &apos; &apos;;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    .arrow:before &#123;</div><div class="line">    	border-left-color: #f00;</div><div class="line">    	left: 26px;</div><div class="line">    &#125;</div><div class="line">    /*一个覆盖另一个，可以调整left值来控制粗细*/</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;arrow&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2488657-ca3c906462fe3203.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="仅仅是箭头.jpg"></p>
+<h4 id="js实现鼠标移动到矩形出现三角形箭头"><a href="#js实现鼠标移动到矩形出现三角形箭头" class="headerlink" title="js实现鼠标移动到矩形出现三角形箭头"></a>js实现鼠标移动到矩形出现三角形箭头</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">	.demo &#123;</div><div class="line">		width: 100px;</div><div class="line">		height: 100px;</div><div class="line">		background-color: #ccc;</div><div class="line">		position: relative;</div><div class="line">		border: 4px solid #333;</div><div class="line">		cursor: pointer;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    .arrow:after, .arrow:before &#123;</div><div class="line">    	/*border: 4px solid #333;*/</div><div class="line">    	content: &apos; &apos;;</div><div class="line">    	height: 0;</div><div class="line">    	width:0;</div><div class="line">    	left: 100%;</div><div class="line">    	position: absolute;</div><div class="line">    &#125;</div><div class="line">    .arrow:after &#123;</div><div class="line">    	border: 9px solid transparent;</div><div class="line">    	border-left: 9px solid #ccc;</div><div class="line">    	top: 15px;</div><div class="line">    &#125;</div><div class="line">    .arrow:before &#123;</div><div class="line">    	border: 15px solid transparent;</div><div class="line">    	border-left: 15px solid #333;</div><div class="line">    	top: 10px;</div><div class="line">    &#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div id=&quot;demo&quot; class=&quot;demo&quot;&gt;</div><div class="line">		</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script&gt; </div><div class="line">    var demo = document.getElementById(&quot;demo&quot;);</div><div class="line">    var arrow = document.createElement(&quot;div&quot;);</div><div class="line">    demo.onmouseover = function()&#123;</div><div class="line">    	arrow.className = &quot;arrow&quot;;</div><div class="line">    	demo.appendChild(arrow);</div><div class="line">    &#125;</div><div class="line">    demo.onmouseout = function()&#123;</div><div class="line">    	demo.removeChild(arrow);</div><div class="line">    &#125;</div><div class="line">   </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/2488657-85b38d695895033e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="js效果.png"></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/03/05/CSS中的z-index/" data-toggle="tooltip" data-placement="top" title="CSS中的z-index">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col" >
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#三角形实现"><span class="toc-text">三角形实现</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#方法一"><span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#方法二：使用伪类"><span class="toc-text">方法二：使用伪类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#箭头实现"><span class="toc-text">箭头实现</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#伪元素实现"><span class="toc-text">伪元素实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#js实现鼠标移动到矩形出现三角形箭头"><span class="toc-text">js实现鼠标移动到矩形出现三角形箭头</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <span class="text-muted"style="font-size: 14px">双击导航条返回顶部</span>
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YuanJun 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','undefined','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!--wechat title img-->
+    <img class="wechat-title-img" src="undefined">
+</body>
+
+</html>
